@@ -1,0 +1,19 @@
+name: create_ap
+help: A tool for managing linux-router
+version: 0.1.0
+
+commands:
+- name: list
+  help: list all available interfaces
+
+- name: start
+  help: read config.json and use linux-router to create an access point
+  # catch_all: true
+  flags:
+  - long: --config
+    short: -c
+    arg: config
+    help: "path to config file. Defaults to ./config.json"
+
+- name: stop
+  help: kill all running daemons and restore normal wifi setup
